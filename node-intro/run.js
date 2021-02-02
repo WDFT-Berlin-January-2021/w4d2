@@ -6,7 +6,13 @@
 // module - package - dependency
 
 // dependency - all the code that i have not written but my app uses
+
 // module (node internal) - package (coming from npm) 
+
+const crypto = require('crypto');
+const randomString = crypto.randomBytes(64).toString('Hex');
+
+console.log(randomString);
 
 // importing a package from npm
 const chalk = require('chalk');
@@ -38,4 +44,18 @@ console.log(greetFunction());
 let nerds = require('nerds');
 
 let singleHP = nerds.resolve('Harry Potter').asArray();
-console.log(singleHP);
+// console.log(singleHP);
+
+// variables that you have access to
+console.log(__dirname);
+console.log(__filename);
+
+// accessing parameters that are passed via the command line
+console.log('this is the parameter you passed in', process.argv.slice(2));
+
+
+
+
+
+
+
